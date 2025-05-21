@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinho</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <style>
+        .principal {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .opcoes {
+            border: 2px solid blue;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .opcoes:hover {
+            background-color: #f0f0f0;
+        }
+        .resposta {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid purple;
+            border-radius: 10px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div style="border: 2px solid green; padding: 5px; border-radius: 10px;" class="col-md-12 text-center principal" >
+               <h5><strong>Situação 6: Chegou em Casa</strong></h5>
+               <h5>Finalmente livre! Mas a realidade bate na porta. O que faz primeiro?</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4 style="border: 2px solid green; padding: 5px; border-radius: 10px;">Escolha um meio de ficar se aliviar</h4>
+            </div>
+            <div class="col-md-3">
+                <h4 class="opcoes" onclick="escolherOpcao('sofa')">Cair no sofá (prêmio por sobrevivência)</h4>
+            </div>
+            <div class="col-md-3">
+                <h4 class="opcoes" onclick="escolherOpcao('gastos')">Verificar gastos (terrorismo financeiro)</h4>
+            </div>
+            <div class="col-md-3">
+                <h4 class="opcoes" onclick="escolherOpcao('estudar')">Dizer que vai estudar (autoengano)</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="resposta" id="resposta">
+
+        </div>
+    </div>
+    
+    <div class="container principal">
+        <div style="border: 2px solid green; padding: 5px; border-radius: 10px;" class="row">
+            <div class="col-md-4 text-center">
+                <strong>Desenvolvido por Nicolas Dorneles</strong>
+            </div>
+            <div class="col-md-4 text-center">
+                Todos os direitos reservados
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="https://www.rockstargames.com/">Conheça nosso site</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function escolherOpcao(opcao) {
+            const respostaDiv = document.getElementById('resposta');
+            let consequencia = '';
+            
+            switch(opcao) {
+                case 'sofa':
+                    consequencia = `
+                        <h3>Consequências de cair no sofá:</h3>
+                        <ul>
+                            <li>Acorda 3h depois com pescoço torto</li>
+                            <li>Celular com 20 mensagens não lidas</li>
+                            <li>A janta virou café da manhã do dia seguinte</li>
+                            <li>Mas aquele sono foi glorioso</li>
+                        </ul>
+
+                         <a class="btn btn-outline-danger btn-block" href="final-tralalero.html">Próxima pergunta</a>
+                        
+                    `;
+                    break;
+                    
+                case 'gastos':
+                    consequencia = `
+                        <h3>Consequências de verificar gastos:</h3>
+                        <ul>
+                            <li>Descobre que gastou 80% com ifood</li>
+                            <li>Conta de luz veio mais alta que suas metas</li>
+                            <li>Promete mudança radical (que dura 2 dias)</li>
+                            <li>Noite de ansiedade garantida</li>
+                        </ul>
+
+                       <a class="btn btn-outline-danger btn-block" href="final-tralalero.html">Próxima pergunta</a>
+
+                    `;
+                    break;
+                    
+                case 'estudar':
+                    consequencia = `
+                        <h3>Consequências de tentar estudar:</h3>
+                        <ul>
+                            <li>Liga o notebook e vai pro YouTube</li>
+                            <li>Curso online fica pra "amanhã"</li>
+                            <li>Acaba vendo receitas que nunca vai fazer</li>
+                            <li>Mas pelo menos tentou (no papel)</li>
+                        </ul>
+
+                        <a class="btn btn-outline-danger btn-block" href="final-tralalero.html">Próxima pergunta</a>
+
+                    `;
+                    break;
+                    
+                default:
+                    consequencia = '<p>Por favor, selecione uma opção válida.</p>';
+            }
+            
+            respostaDiv.innerHTML = consequencia;
+            
+            
+        }
+    </script>
+    
+    
+</body>
+</html>

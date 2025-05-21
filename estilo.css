@@ -1,0 +1,34 @@
+.opcoes{
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.opcoes:hover{
+    background-color: black;
+    color: #FFF;
+}
+
+.caixa{
+    width: 50px;
+}
+
+.principal{
+    margin-top: 150px;
+    margin-bottom: 15px;
+}
+
+.resultado{
+    border: 1px solid red;
+    border-radius: 15px;
+    color: black;
+}
+
+.opcoes2:hover{
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: black;
+    padding: 5px;
+}
